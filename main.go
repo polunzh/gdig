@@ -37,20 +37,6 @@ type Query struct {
 	question Question
 }
 
-type RR struct {
-	Name     string
-	Type     uint16
-	Class    uint16
-	TTL      uint32
-	RDLength uint16
-}
-
-type Message struct {
-	header   QHeader
-	question Question
-	rr       RR
-}
-
 func (header QHeader) encode() []byte {
 	var buffer bytes.Buffer
 
